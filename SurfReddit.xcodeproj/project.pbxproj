@@ -14,6 +14,7 @@
 		DE52230323EB82B7000FC26A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE52230223EB82B7000FC26A /* Assets.xcassets */; };
 		DE52230623EB82B7000FC26A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE52230423EB82B7000FC26A /* LaunchScreen.storyboard */; };
 		DE52231623EB849A000FC26A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52231523EB849A000FC26A /* Post.swift */; };
+		DE52231823EB86FB000FC26A /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52231723EB86FB000FC26A /* PostServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DE52230523EB82B7000FC26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE52230723EB82B7000FC26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE52231523EB849A000FC26A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DE52231723EB86FB000FC26A /* PostServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		DE52231023EB82EA000FC26A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DE52231723EB86FB000FC26A /* PostServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				DE5222FA23EB82B5000FC26A /* AppDelegate.swift in Sources */,
 				DE5222FC23EB82B5000FC26A /* SceneDelegate.swift in Sources */,
 				DE52231623EB849A000FC26A /* Post.swift in Sources */,
+				DE52231823EB86FB000FC26A /* PostServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

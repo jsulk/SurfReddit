@@ -13,5 +13,13 @@ struct Response: Decodable {
 }
 
 struct Data: Decodable {
-    
+    var children: [Post]
+}
+
+struct Post: Decodable {
+    var data: PostData
+}
+
+struct PostData: Decodable {
+    var title: String
 }
