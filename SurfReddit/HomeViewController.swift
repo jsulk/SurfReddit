@@ -16,8 +16,22 @@ class HomeViewController: UIViewController {
     }
 
     func getPosts() {
-        print("SWEET")
+        let postServices = PostServices()
+        postServices.getPosts { (error, posts) in
+            if let error = error {
+                print(error)
+            } else {
+                guard let posts = posts else {
+                    print("NO")
+                    return
+                }
+                print(posts)
+            }
+        }
     }
     
 }
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+}
