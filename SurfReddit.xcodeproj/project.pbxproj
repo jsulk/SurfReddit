@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE5222FA23EB82B5000FC26A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5222F923EB82B5000FC26A /* AppDelegate.swift */; };
 		DE5222FC23EB82B5000FC26A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5222FB23EB82B5000FC26A /* SceneDelegate.swift */; };
-		DE5222FE23EB82B5000FC26A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5222FD23EB82B5000FC26A /* ViewController.swift */; };
+		DE5222FE23EB82B5000FC26A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5222FD23EB82B5000FC26A /* HomeViewController.swift */; };
 		DE52230123EB82B5000FC26A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5222FF23EB82B5000FC26A /* Main.storyboard */; };
 		DE52230323EB82B7000FC26A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE52230223EB82B7000FC26A /* Assets.xcassets */; };
 		DE52230623EB82B7000FC26A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE52230423EB82B7000FC26A /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		DE5222F623EB82B5000FC26A /* SurfReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5222F923EB82B5000FC26A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE5222FB23EB82B5000FC26A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE5222FD23EB82B5000FC26A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		DE5222FD23EB82B5000FC26A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		DE52230023EB82B5000FC26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE52230223EB82B7000FC26A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE52230523EB82B7000FC26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,9 +63,10 @@
 				DE52230F23EB82E3000FC26A /* Models */,
 				DE52231123EB82F2000FC26A /* Controllers */,
 				DE52231023EB82EA000FC26A /* Services */,
-				DE52231223EB82FD000FC26A /* Storyboards */,
 				DE52231323EB8318000FC26A /* Assets */,
 				DE52231423EB833B000FC26A /* Delegates */,
+				DE5222FF23EB82B5000FC26A /* Main.storyboard */,
+				DE52230423EB82B7000FC26A /* LaunchScreen.storyboard */,
 				DE52230723EB82B7000FC26A /* Info.plist */,
 			);
 			path = SurfReddit;
@@ -90,18 +91,9 @@
 		DE52231123EB82F2000FC26A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DE5222FD23EB82B5000FC26A /* ViewController.swift */,
+				DE5222FD23EB82B5000FC26A /* HomeViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		DE52231223EB82FD000FC26A /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				DE52230423EB82B7000FC26A /* LaunchScreen.storyboard */,
-				DE5222FF23EB82B5000FC26A /* Main.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		DE52231323EB8318000FC26A /* Assets */ = {
@@ -192,7 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE5222FE23EB82B5000FC26A /* ViewController.swift in Sources */,
+				DE5222FE23EB82B5000FC26A /* HomeViewController.swift in Sources */,
 				DE5222FA23EB82B5000FC26A /* AppDelegate.swift in Sources */,
 				DE5222FC23EB82B5000FC26A /* SceneDelegate.swift in Sources */,
 				DE52231623EB849A000FC26A /* Post.swift in Sources */,
