@@ -15,6 +15,7 @@
 		DE52230623EB82B7000FC26A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE52230423EB82B7000FC26A /* LaunchScreen.storyboard */; };
 		DE52231623EB849A000FC26A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52231523EB849A000FC26A /* Post.swift */; };
 		DE52231823EB86FB000FC26A /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52231723EB86FB000FC26A /* PostServices.swift */; };
+		DE68596423EB953800A4495F /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE68596323EB953800A4495F /* ImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DE52230723EB82B7000FC26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE52231523EB849A000FC26A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DE52231723EB86FB000FC26A /* PostServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
+		DE68596323EB953800A4495F /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DE52230F23EB82E3000FC26A /* Models */,
 				DE52231123EB82F2000FC26A /* Controllers */,
 				DE52231023EB82EA000FC26A /* Services */,
+				DE68596223EB951600A4495F /* Extensions */,
 				DE52231323EB8318000FC26A /* Assets */,
 				DE52231423EB833B000FC26A /* Delegates */,
 				DE5222FF23EB82B5000FC26A /* Main.storyboard */,
@@ -111,6 +114,14 @@
 				DE5222FB23EB82B5000FC26A /* SceneDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		DE68596223EB951600A4495F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE68596323EB953800A4495F /* ImageExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5222FE23EB82B5000FC26A /* HomeViewController.swift in Sources */,
+				DE68596423EB953800A4495F /* ImageExtension.swift in Sources */,
 				DE5222FA23EB82B5000FC26A /* AppDelegate.swift in Sources */,
 				DE5222FC23EB82B5000FC26A /* SceneDelegate.swift in Sources */,
 				DE52231623EB849A000FC26A /* Post.swift in Sources */,

@@ -22,4 +22,5 @@ struct Post: Decodable {
 
 struct PostData: Decodable {
     var title: String
+    var thumbnail: String
 }
