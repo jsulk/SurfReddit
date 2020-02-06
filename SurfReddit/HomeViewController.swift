@@ -39,6 +39,10 @@ class HomeViewController: UIViewController {
         postServices.getPosts { (error, posts) in
             if let error = error {
                 print(error)
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                    self.setTableViewBackground()
+                }
             } else {
                 guard let posts = posts else { return }
                 self.posts = []
@@ -47,15 +51,25 @@ class HomeViewController: UIViewController {
                 }
                 DispatchQueue.main.async {
                     self.refreshControl.endRefreshing()
+                    self.tableView.backgroundView = nil
                     self.tableView.reloadData()
                 }
             }
         }
     }
     
+    func setTableViewBackground() {
+        let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
+        noDataLabel.text = "Please try again later"
+        noDataLabel.textColor = .gray
+        noDataLabel.textAlignment = .center
+        noDataLabel.numberOfLines = 0
+        self.tableView.backgroundView = noDataLabel
+    }
+    
 }
 
-// MARK: UITableViewDataSource methods
+// MARK: UITableViewDelegate/DataSource methods
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -16,14 +16,10 @@ class PostCell: UITableViewCell {
     
     var post: PostData?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func setupCell() {
         guard let post = post else { return }
         postTitle.text = post.title
-        postAuthor.text = post.author
+        postAuthor.text = "@\(post.author)"
         if post.thumbnail != "self" {
             postImage.getPostImagesAsync(urlString: post.thumbnail)
             postImage.clipsToBounds = true
@@ -32,6 +28,10 @@ class PostCell: UITableViewCell {
             postImage.contentMode = .center
         }
         postImage.layer.cornerRadius = 3.0
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 
 }
