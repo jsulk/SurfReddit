@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupView() {
-        self.navigationController?.navigationBar.tintColor = .blue
+        //Set footer view so default seperator insets do not show when there are no posts
         self.tableView.tableFooterView = UIView()
     }
     
