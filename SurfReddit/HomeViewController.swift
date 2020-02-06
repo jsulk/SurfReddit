@@ -59,6 +59,19 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func openLinkInBrowser(permalink: String) {
+        let alert = UIAlertController(title: "Open link in browser?", message: "This will re-direct you to this post in your browser.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Open", style: .default, handler: { action in
+            if let url = URL(string: "\(self.baseRedditUrl)\(permalink)") {
+                UIApplication.shared.open(url)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    
     func setErrorBackground() {
         let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
         noDataLabel.text = "Please try again later"
@@ -95,10 +108,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let post = posts[indexPath.row]
-        //Open link in browser
-        if let url = URL(string: "\(baseRedditUrl)\(post.permalink)") {
-            UIApplication.shared.open(url)
-        }
+        self.openLinkInBrowser(permalink: post.permalink)
     }
     
 }
