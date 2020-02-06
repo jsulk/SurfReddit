@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
+    var baseRedditUrl = "https://www.reddit.com"
     var posts = [PostData]()
     
     override func viewDidLoad() {
@@ -93,6 +94,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let post = posts[indexPath.row]
+        //Open link in browser
+        if let url = URL(string: "\(baseRedditUrl)\(post.permalink)") {
+            UIApplication.shared.open(url)
+        }
     }
     
 }
