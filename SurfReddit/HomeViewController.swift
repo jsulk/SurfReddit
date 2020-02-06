@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
     }
     
     func openLinkInBrowser(permalink: String) {
-        let alert = UIAlertController(title: "Open link in browser?", message: "This will re-direct you to this post in your browser.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Open post in browser?", message: "This will re-direct you to this post in your browser.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Open", style: .default, handler: { action in
             if let url = URL(string: "\(self.baseRedditUrl)\(permalink)") {
