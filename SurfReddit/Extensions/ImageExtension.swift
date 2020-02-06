@@ -14,21 +14,21 @@ let imageCache = NSCache<NSString, AnyObject>()
 extension UIImageView {
 
     public func getPostImagesAsync(urlString: String) {
-        //Set cell image to nil so that images are not re-used in cells
+        //Set default icon in case there is an issue with the image fetch
         let defaultPostIcon = UIImage(named:"defaultPostImage_icon")?.withRenderingMode(.alwaysTemplate)
         self.tintColor = .lightGray
         self.image = defaultPostIcon
         self.contentMode = .center
         
-        //Initial check to see if thumbnail image is in cache
+        //Check to see if thumbnail image is in cache
         if let cachedThumbnail = imageCache.object(forKey: urlString as NSString) as? UIImage{
             self.contentMode = .scaleAspectFill
             self.image = cachedThumbnail
             return
         }
+        
         let url = urlString.replacingOccurrences(of: " ", with: "+")
         let newUrl = NSURL(string: url)! as URL
-        
         let urlRequest = URLRequest(url: newUrl)
         
         URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) -> Void in
