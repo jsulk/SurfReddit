@@ -17,23 +17,23 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBar()
+        setupView()
         setupRefreshControl()
         getPosts()
     }
     
-    func setupNavBar() {
+    func setupView() {
         self.navigationController?.navigationBar.tintColor = .blue
+        self.tableView.tableFooterView = UIView()
     }
     
     func setupRefreshControl() {
         refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(getPosts), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
 
-    func getPosts() {
+    @objc func getPosts() {
         refreshControl.beginRefreshing()
         let postServices = PostServices()
         postServices.getPosts { (error, posts) in
@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
                 print(error)
             } else {
                 guard let posts = posts else { return }
+                self.posts = []
                 for post in posts {
                     self.posts.append(post.data)
                 }
@@ -50,10 +51,6 @@ class HomeViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    @objc func refresh(_ sender: Any) {
-        getPosts()
     }
     
 }
@@ -70,13 +67,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post = posts[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
-        cell.textLabel?.text = post.title
-        if post.thumbnail != "self" {
-            cell.imageView?.getPostImagesAsync(urlString: post.thumbnail)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCell
+        cell.post = posts[indexPath.row]
+        cell.setupCell()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

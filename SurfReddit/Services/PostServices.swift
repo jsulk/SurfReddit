@@ -10,7 +10,7 @@ import Foundation
 
 class PostServices {
     
-    private let baseUrl = "https://www.reddit.com/r/surfing.json"
+    private let baseUrl = "https://www.reddit.com/r/surfing/top.json"
     
     func getPosts(callback: @escaping (_ error: NSError?, _ posts: [Post]?) -> Void) -> Void{
         
