@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
                 print(error)
                 DispatchQueue.main.async {
                     self.refreshControl.endRefreshing()
-                    self.setTableViewBackground()
+                    self.setErrorBackground()
                 }
             } else {
                 guard let posts = posts else { return }
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func setTableViewBackground() {
+    func setErrorBackground() {
         let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
         noDataLabel.text = "Please try again later"
         noDataLabel.textColor = .gray
